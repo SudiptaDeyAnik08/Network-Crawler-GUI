@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../static/style2.css">
+    <title>Document</title>
+</head>
+<body >
+    
+     <!-- <div class="bg-2">
+
+        <div class="paraent-2">
+
+            <div class="card-1">
+               <div class="h">
+                    <h2>Web-Address Searched </h2>
+               </div>
+               <hr>
+               <br>
+                <div class="h-body">
+                    {% if name %}
+
+                    <h3> {{name}} </h3>
+
+                    {% endif %}
+                </div>
+            </div>
+
+
+            <div class="card-1">
+                <div class="h">
+                   <h2>Open Port </h2>
+                </div>
+                <hr>
+                <div class="h-body">
+                    {% for x in  valid_port_number_and_service %}
+        
+                    <h3>{{x}} </h3>
+                    
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="card-1">
+                <div class="h">
+                    <h2>A Record Found</h2>
+                </div>
+                <hr>
+                <div class="h-body">
+                    {% for x in A_records %}
+        
+                    <h3>A Records Are: {{x}}</h3>
+                    
+                    {% endfor %}
+                </div>
+            </div>
+
+
+            <div class="card-1">
+                <div class="h">
+                    <h2>MX Record</h2>
+                </div>     
+                <hr>
+                <div class="h-body">
+                    {% for x in MX_record %}
+        
+                    <h3>MX Records Are: {{x}}</h3>
+                    
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="card-1">
+                <div class="h">
+                    <h2>CNAME Value</h2>
+                </div>
+                <hr>
+                <div class="h-body">
+                    {% if CNAME_Value %}
+                    <h3>{{CNAME_Value}}</h3>
+                    {% endif  %}
+                </div>
+                
+            </div>
+            <div class="card-1">
+                <div class="h">
+                    <h2>Searched Port Range</h2>
+                </div>
+                <hr>
+                <div class="h-body">
+                    {% if portNumber %}
+                    
+                    <h3>Searched Port-Number Range {{portNumber}}  </h3>
+        
+                    {% endif %}
+                </div>
+              
+            </div>
+            <div class="card-1 valid_url">
+               <div class="h">
+                 <h2>Valid  Subdomains </h2>
+               </div>
+               <hr>
+                <div class="h-body">
+                    {% for x in valid_url %}
+    
+                    <h3> {{x}}</h3>
+                    
+                    {% endfor %}
+                </div>
+            </div>
+
+         </div>        
+    </div>  -->
+    
+    <!-- Nav bar -->
+    <div>
+        <div id="parent">
+            <div class="child">
+                <h1>Network Crawler</h1>
+            </div>
+            <div id="bg-web_address" class="child">
+                {% if web_address %}
+                 <h2 id="searched-web_address">Searched Web Address: {{web_address}}</h2>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <!-- General Information -->
+    <div class="body-paraent">
+        <div class="generalinfo_paraent_Class">
+
+            <div class="generalinfo_div child">
+                <img  class="img-info" src="../static/asset/info.png" alt="">
+                <h1 class="generalinfo_id">General Information</h1>
+            </div>
+            
+            <div class="">
+                <hr>
+                {% if web_address %}
+                    <h2>Entered Web Address is : <span id="Web_address1"> {{web_address}} </span><span id="Valid">Valid!</span></h2>
+                {% endif %}
+               
+                <hr>
+                {% if domain_name %}
+                <h2>Domain Name: {{domain_name}} </h2>
+                {% endif %}
+                
+                <hr> 
+                {% if domain_type %}
+                <h2>Domain Type: {{domain_type}}</h2>
+                {% endif %}
+
+                <hr>
+                {% if web_address, ipAddress %}
+                <h2>The {{web_address}} IP Address is {{ipAddress}}</h2>
+                
+                {% endif %}
+                
+            </div>
+            
+        </div>
+
+        <!-- open port -->
+        <div class="child generalinfo_paraent_Class Open_port_info">
+            <div class="generalinfo_div  ">
+                <img class="img-info" src="../static/asset/Port.jpg" alt="">
+                <h1 class="generalinfo_id">Information About Port: </h1>
+            </div>
+            <div>
+                
+                {% for x in valid_port_number_and_service %}
+                <hr>
+                <h2> {{x}}</h2>
+                {% endfor %}
+            </div>
+        </div>
+
+       
+    </div>
+
+    <div class="body-paraent">
+         <!-- Information About IP address-->
+        <div class="child generalinfo_paraent_Class ip_address">
+            <div class="generalinfo_div  ">
+                <img class="img-info" src="../static/asset/ip.png" alt="">
+                <h1 class="generalinfo_id">Information About Ip Address : </h1>
+            </div>
+            <div>
+                
+                {% for x in A_records %}
+                <hr>
+                <h2>Public Ip  {{x}}</h2>
+                {% endfor %}
+            </div>
+       
+        </div>
+        
+        <!--  Information about mail server  -->
+        <div class="child generalinfo_paraent_Class mail_Server">
+            <div class="generalinfo_div  ">
+                <img class="img-info" src="../static/asset/server_mail.png" alt="">
+                <h1 class="generalinfo_id">Information About Mail Servers : </h1>
+            </div>
+            <div>
+                
+                {% for x in MX_record %}
+                <hr>
+                <h2>Mail Server:  {{x}}</h2>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <!-- Information about Subdomain -->
+        <div class="child generalinfo_paraent_Class subdomain">
+            <div class="generalinfo_div  ">
+                <img class="img-info" src="../static/asset/subdomain.png" alt="">
+                <h1 class="generalinfo_id">Information About Subdomains : </h1>
+            </div>
+            <div>
+                
+                {% for x in valid_url %}
+                <hr>
+                <h2>Sudomain:  {{x}}</h2>
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- Information About Registerer -->
+        <div class="child generalinfo_paraent_Class subdomain">
+            <div class="generalinfo_div  ">
+                <img class="img-info" src="../static/asset/subdomain.png" alt="">
+                <h1 class="generalinfo_id">Information About Register  : </h1>
+            </div>
+            <div>
+                
+                {% for x in w.domain_name %}
+                <hr>
+                <h2>Domain Name:  {{x}}</h2>
+                {% endfor %}
+
+                <hr>
+                {% if w.registrar %}
+                <h2>Register : {{w.registrar}}</h2>
+                {% endif %}
+
+                <hr>
+                {% if w.whois_server %}
+                <h2>Whois Server : {{w.whois_server}}</h2>
+                {% endif %}
+
+                <hr>
+                {% if w.referral_url %}
+                <h2>Referral Url: {{w.referral_url}}</h2>
+                {% endif %}
+
+                <hr>
+                {% if w.updated_date %}
+                <h2>Updated Date: {{w.updated_date}}</h2>
+                {% endif %}
+
+                <hr>
+                {% if w.creation_date %}
+                <h2>Creation Date: {{w.creation_date}}</h2>
+                {% endif %}
+
+                <hr>
+                {% if w.expiration_date %}
+                <h2>Expiration Date: {{w.expiration_date}}</h2>
+                {% endif %}
+
+                <hr>
+                {% for x in w.name_servers %}
+                <h2>Name Servers: {{w.name_servers}}</h2>
+                {% endfor %}
+
+
+                <hr>
+                {% if w.status %}
+                <h2>Status: {{w.status}}</h2>
+                {% endif  %}
+
+                <hr>
+                {% if w.emails %}
+                <h2>Emails: {{w.emails}}</h2>
+                {% endif  %}
+
+                <hr>
+                {% if w.dnssec %}
+                <h2>Dnssec: {{w.dnssec}}</h2>
+                {% endif  %}
+
+                <hr>
+                {% if w.name %}
+                <h2>Name: {{w.name}}</h2>
+                {% endif  %}
+
+                <hr>
+                {% if w.org %}
+                <h2>Org: {{w.org}}</h2>
+                {% endif  %}
+
+
+                <hr>
+                {% if w.address %}
+                <h2>Address: {{w.address}}</h2>
+                {% endif  %}
+
+               
+                <hr>
+                {% if w.city %}
+                <h2>City: {{w.city}}</h2>
+                {% endif  %}
+
+                <hr>
+                {% if w.state %}
+                <h2>State: {{w.state}}</h2>
+                {% endif  %}
+
+                <hr>
+                {% if w.registrant_postal_code %}
+                <h2>Registrant Postal Code: {{w.registrant_postal_code}}</h2>
+                {% endif  %}
+
+                <hr>
+                {% if w.country %}
+                <h2>Country: {{w.country}}</h2>
+                {% endif  %}
+            </div>
+        </div>
+    </div>
+    <!-- # w.domain_name  # loop array.
+    # w.registrar
+    # w.whois_server
+    # w.referral_url
+    # w.updated_date
+    # w.creation_date
+    # w.expiration_date
+    # w.name_servers
+    # w.status
+    # w.emails
+    # w.dnssec
+    # w.name
+    # w.org
+    # w.address
+    # w.city
+    # w.state
+    # w.registrant_postal_code
+    # w.country -->
+
+</body>
+</html>

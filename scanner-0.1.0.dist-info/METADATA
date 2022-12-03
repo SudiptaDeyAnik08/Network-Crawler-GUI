@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: scanner
+Version: 0.1.0
+Summary: Scanner is like Ruby's StringScanner
+Home-page: http://github.com/liluo/scanner
+Author: liluo
+Author-email: i@liluo.org
+Maintainer: xtao
+Maintainer-email: xutao881001@gmail.com
+License: MIT License
+Keywords: scanner StringScanner
+Platform: UNKNOWN
+
+UNKNOWN
+

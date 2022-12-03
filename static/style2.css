@@ -1,0 +1,73 @@
+*{
+    margin: 0;
+    padding:0;
+}
+#parent{
+    display: flex;
+    background-color: black;
+    padding: 15px;
+    padding-bottom: 5px;
+    color: white;
+}
+
+.child{
+    width: 50%;
+}
+.body-paraent{
+    display: flex;
+}
+.generalinfo_paraent_Class{
+    border: 2px solid gainsboro;
+    border-radius: 10px;
+    width: 50%;
+    margin: 10px;
+    border-top: 5px solid red;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.generalinfo_div{
+    display: flex;
+    padding:10px
+}
+
+.img-info{
+    width: 70px;
+}
+
+.generalinfo_id{
+    padding: 10px;
+}
+
+#Valid{
+    color: green;
+}
+
+#Web_address1{
+    color: cornflowerblue;
+}
+
+hr{
+ width: 70%;
+}
+h2{
+ margin: 10px;   
+}
+
+#searched-web_address{
+    margin: 0px;
+}
+
+.Open_port_info{
+    border-top: 5px solid blue;
+}
+
+.ip_address{
+    border-top: 5px solid green;
+}
+
+.mail_Server{
+    border-top: 5px solid orange;
+}
+
+.subdomain{
+    border-top: 5px solid skyblue;
+}
